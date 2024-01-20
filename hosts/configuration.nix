@@ -101,6 +101,7 @@
     xclip
     dmenu
     dunst
+    nodejs
     firefox
     swaycons
     xfce.thunar
