@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "obin";
@@ -21,10 +23,10 @@
     less
     brave
     floorp
-    neovim
     discord
+    neovim-flake
   ];
- 
+
   # Configure user programs
   programs.git.enable = true;
   programs.git.userName = "obinmatt";
@@ -42,8 +44,15 @@
   programs.zsh.shellAliases.nixup = "pushd /etc/nixos; sudo nix flake update; nixswitch; popd";
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
-  programs.alacritty.enable = true;
-  programs.alacritty.settings.font.size = 12;
+  programs.wezterm.enable = true;
+  programs.wezterm.enableZshIntegration = true;
+  programs.wezterm.extraConfig = ''
+    return {
+        font_size = 14.0,
+        color_scheme = "rose-pine",
+        hide_tab_bar_if_only_one_tab = true
+    }
+  '';
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

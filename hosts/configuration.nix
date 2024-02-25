@@ -88,14 +88,10 @@
   # Enable flakes.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Allow unfree packages.
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     st
-    vim
     tldr
     rofi
     xclip
@@ -202,6 +198,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
 
