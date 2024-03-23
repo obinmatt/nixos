@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "obin";
@@ -48,8 +44,8 @@
   programs.wezterm.enableZshIntegration = true;
   programs.wezterm.extraConfig = ''
     return {
-        font_size = 14.0,
-        color_scheme = "rose-pine",
+        font_size = 12.0,
+        color_scheme = "Catppuccin Mocha",
         hide_tab_bar_if_only_one_tab = true
     }
   '';

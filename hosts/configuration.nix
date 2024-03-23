@@ -92,12 +92,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     st
+    git
     tldr
     rofi
     xclip
     dmenu
     dunst
     nodejs
+    lazygit
     firefox
     swaycons
     xfce.thunar
